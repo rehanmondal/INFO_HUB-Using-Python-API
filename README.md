@@ -51,7 +51,13 @@ This is a News and Current Affairs Website that shows Worlds Top News and Quenti
 
 
 ## API Reference
-todo : will uploade at evening
+| API	        |  Key Type    | Key Required     |      GET 	           |
+| :-------- 	| :------- 	   | :--------------- |:---------------
+|News 	      | `string` 	   | **Required**     |https://newsapi.org/  |
+|MCQ   	      | `string` 	   | **Required**     |	https://opentdb.com/ |
 
 ## Credits
-todo : will uploade at evening
+This project would not be possible without the help of these free application program interface(APIs)
+- newsapi.org
+- opentdb.com<br>
+A lot of thank to its creator and to the github platform.
