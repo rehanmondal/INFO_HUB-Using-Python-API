@@ -1,0 +1,108 @@
+
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+
+<!--        PARENT/BASE CLASS OF ALL PAGES
+            [FOR TEMPLATE INHERITANCE IN FLASK]
+-->
+
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/styles.css')}}" />
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename = 'rehan_fav.ico')}}" />
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <!-- FONTAWESOME -->
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+<!-- HEADER SECTION -->
+        <header>
+            <div class = "navigation-container">
+                <div class = "top-head">
+                    <div class = "web-name">
+                        <h1>INFO_HUB</h1>
+                    </div>
+
+                    <div class = "ham-btn">
+                        <span>
+                            <i class = "fas fa-bars"></i>
+                        </span>
+                    </div>
+
+                    <div class = "times-btn">
+                        <span>
+                            <i class = "fas fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- NAV BAR SECTION -->
+
+                <div class = "nav-bar" id = "nav-bar">
+                    <nav>
+                        <ul>
+                            <li><a href = "/">home</a></li>
+                            <li><a href = "/allnews" target="_blank">all news</a></li>
+
+                            <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">CA / MCQs</a>
+                            <div class="dropdown-content">
+                                  <a href="/data_for_gk" name="gk" target="_blank">General Knowledge </a>
+                                  <a href="/data_for_cs" name="cs" target="_blank">Computers Science</a>
+                                  <a href="/data_for_go" name="gs" target="_blank">Geography</a>
+                                  <a href="/data_for_sp" name="sp" target="_blank">Sports</a>
+                            </div>
+                          </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!--    SOCIAL MEDIA ICONS -->
+                <div class = "social-icons">
+                    <ul>
+                        <li>
+                            <a href= "#"><i class = "fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href= "#"><i class = "fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href= "#"><i class = "fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href= "#"><i class = "fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+{% block body %}{% endblock %}
+<!--    DERIVED/CHILD CLASS CODES WILL EXECUTE HERE    -->
+
+        <footer>
+            <div class = "footer-container">
+                <div class = "footer-left">
+                    <h2>INFO_HUB</h2>
+                    <p>About Me : <br>Rehan Mondal<br>Computer Science Engineer<br>Y.O.P: July,2022<br>From Inda,WB</p>
+                </div>
+
+                <div class = "footer-right">
+                    <h2>Our Services : </h2>
+                    <p>Articles<br>Leading News<br>Current Affairs<br>Hot On The Web<br>Careers</p>
+
+                </div>
+            </div>
+            <p>Copyright &copy; 2023 All rights reserved</p>
+        </footer>
+        <script src="{{ url_for('static',filename = 'js/script.js')}}" async defer></script>
+    </body>
+</html>
+

@@ -1,0 +1,34 @@
+
+
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!--    INHERIT PARENT CLASS 'layout'   -->
+
+{% extends 'layout.html' %}
+{% block body %}
+    <br>
+    <div style="margin-left: 65px;">
+        <h1 style="color:black">More Topics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <u>Geography</u></h1>
+        <h2 style="color:red">Coming Soon !</h2>
+    </div>
+    <br>
+    {%  for i in range(20)   %}
+        <p id="rcorners2">
+            Q.&nbsp;{{i+1}}.&nbsp;&nbsp;{{   ( data_for_go['results'][i]['question'] )   }}<br>
+            Ans :&nbsp;&nbsp;{{(data_for_go['results'][i]['correct_answer'])}}
+        </p>
+    {%  endfor    %}
+ <section class = "banner">
+     <div class = "banner-main-content" align="left">
+    </div>
+    <div class = "banner-main-content" align="center">
+        <button >
+            <a href="#">Load More</a>
+        </button>
+    </div>
+ </section>
+
+{% endblock %}

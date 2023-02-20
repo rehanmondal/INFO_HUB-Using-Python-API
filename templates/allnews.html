@@ -1,0 +1,33 @@
+
+
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!--    INHERIT PARENT CLASS 'layout'   -->
+
+{% extends 'layout.html' %}
+{% block body %}
+
+<section class = "main-container-right">
+    <h1 align="center" style="color:navy"><u>ALL NEWS</u></h1>
+<!--    FETCHING NEWS DATA. ADD more news by set for loop value from 20 to larger value -->
+    {%  for i in range(1,20)   %}
+        <article>
+            <h3 style="color:grey">{{news_data['articles'][i]['author']}} </h3>
+            <div>
+                <h2 style="color:blue">{{news_data['articles'][i]['title']}}</h2>
+                <p>{{news_data['articles'][i]['description']}}</p>
+                <a href ="{{news_data['articles'][i]['url']}}" target="_blank">Read More <span>>></span></a>
+            </div>
+            <img src = "{{news_data['articles'][i]['urlToImage']}}">
+        </article>
+    {% endfor %}
+</section>
+ <section class = "banner">
+    <div class = "banner-main-content" align="right">
+        <button >
+            <a href="/allnews_2">See More</a>
+        </button>
+    </div>
+ </section>
+{% endblock %}
+

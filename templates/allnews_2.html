@@ -1,0 +1,40 @@
+
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!--    INHERIT PARENT CLASS 'layout'   -->
+
+{% extends 'layout.html' %}
+{% block body %}
+
+<section class = "main-container-right">
+    <h1 align="center" style="color:navy"><u>ALL NEWS</u></h1>
+    <!--    IN FIRST PAGE SHOWED Upto 20 NEWS, For Pagination This is For Loop value for Next Page   -->
+    <!--    FETCHING NEWS DATA. ADD more news by set for loop value from 40 to larger value -->
+
+    {%  for i in range(21,40)   %}
+        <article>
+            <h3 style="color:grey">{{news_data['articles'][i]['author']}} </h3>
+            <div>
+                <h2 style="color:blue">{{news_data['articles'][i]['title']}}</h2>
+                <p>{{news_data['articles'][i]['description']}}</p>
+                <a href ="{{news_data['articles'][i]['url']}}" target="_blank">Read More <span>>></span></a>
+            </div>
+            <img src = "{{news_data['articles'][i]['urlToImage']}}">
+        </article>
+    {% endfor %}
+
+</section>
+ <section class = "banner">
+     <div class = "banner-main-content" align="left">
+        <button >
+            <a href="/allnews">Previous</a>
+        </button>
+    </div>
+    <div class = "banner-main-content" align="right">
+        <button >
+            <a href="/allnews_2">See More</a>
+        </button>
+    </div>
+ </section>
+
+{% endblock %}

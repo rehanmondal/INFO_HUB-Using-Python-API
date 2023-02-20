@@ -1,0 +1,95 @@
+
+
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!-- R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT R/COMMENT   -->
+<!--    INHERIT PARENT CLASS 'layout'   -->
+
+{% extends 'layout.html' %}
+{% block body %}
+
+        <section class = "banner">
+            <div class = "banner-main-content">
+                <h2>STAY CONNECTED TO GET TOP NEWS</h2>
+                <h3>World's Leading News Portal</h3>
+
+                <div class = "current-news-head">
+                    <h3>What Computer Science is Today?<span>by Rehan</span></h3>
+                    <h3>What's the scope of Being a Software Developer<span>by Rehan</span></h3>
+                    <h3>What Companies want from you to Grow its Business<span>by Rehan</span></h3>
+                    <h3>And Finally What's Your Goal To Achieve in Your life <span>by Rehan</span></h3>
+                </div>
+            </div>
+
+            <div class = "banner-sub-content">
+                {%  for i in range(4)   %}
+                <div class = "hot-topic">
+                        <h4 style="color:navy">{{news_data['articles'][i]['title']}}</h4>
+                        <img src = "{{news_data['articles'][i]['urlToImage']}}">
+                    <div class = "hot-topic-content">
+
+                        <p>{{news_data['articles'][i]['description']}} </p>
+                        <p> Published on :{{news_data['articles'][i]['publishedAt']}} </p>
+                        <a href = "{{news_data['articles'][i]['url']}}" target="_blank">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <hr>
+        <main>
+            <section class = "main-container-left">
+                <h2>Top News</h2>
+                <div class = "container-top-left">
+                    <article>
+                        <img src = "{{news_data['articles'][5]['urlToImage']}}">
+
+                        <div>
+                            <h3>{{news_data['articles'][5]['title']}}</h3>
+
+                            <p>{{news_data['articles'][5]['description']}}</p>
+
+                            <a href = "{{news_data['articles'][5]['url']}}" target="_blank">Read More <span>>></span></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class = "container-bottom-left">
+                    <article>
+                        <img src = "{{news_data['articles'][6]['urlToImage']}}">
+                        <div>
+                            <h3>{{news_data['articles'][6]['title']}}</h3>
+                            <p>{{news_data['articles'][6]['description']}}</p>
+
+                            <a href = "{{news_data['articles'][6]['url']}}" target="_blank">Read More <span>>></span></a>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src = "{{news_data['articles'][7]['urlToImage']}}">
+                        <div>
+                            <h3>{{news_data['articles'][7]['title']}}</h3>
+                            <p>{{news_data['articles'][7]['description']}}</p>
+
+                            <a href = "{{news_data['articles'][7]['url']}}" target="_blank">Read More <span>>></span></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class = "main-container-right">
+                <h2>Trending Stories</h2>
+                {%  for i in range(8,12)   %}
+                    <article>
+
+                        <h4>TRENDING</h4>
+                        <div>
+                            <h2>{{news_data['articles'][i]['title']}}</h2>
+                            <p>{{news_data['articles'][i]['description']}}</p>
+                            <a href ="{{news_data['articles'][i]['url']}}" target="_blank">Read More <span>>></span></a>
+                        </div>
+                        <img src = "{{news_data['articles'][i]['urlToImage']}}">
+                    </article>
+                {% endfor %}
+            </section>
+        </main>
+{% endblock %}
